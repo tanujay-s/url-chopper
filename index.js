@@ -9,7 +9,6 @@ app.set("views", path.join(__dirname, "views")); // Set the views directory
 app.use(express.static(__dirname + '/public'));
 
 //Code related to mongodb
-// const db = 'mongodb+srv://admin-pranjal:Test123@cluster0.iew4o.mongodb.net/url-shortner';
 const db = 'mongodb+srv://tanujay063:zRxOUrrgiq8HninA@cluster0.udjldvq.mongodb.net/?retryWrites=true&w=majority';
 
 
@@ -41,24 +40,13 @@ function getRandom(){
     var random_string = Math.random().toString(32).substring(2, 5) + Math.random().toString(32).substring(2, 5);    
     return random_string;
 }
-// function getFinalURL(key, value) {
-//     if (key.startsWith("http://")) { // remove https condition when deploying on heroku
-//         return "http://slicedurl.herokuapp.com/" + value;
-//     } else if(key.startsWith("https://")) { // uncomment out these statements as well
-//         return "https://slicedurl.herokuapp.com/" + value;
-//     } else if(key.startsWith("ftp://")){
-//         return "ftp://slicedurl.herokuapp.com/" + value;
-//     } else {
-//         console.log("Oops ! Some error occured.");
-//     }
-// }
 function getFinalURL(key, value) {
     if (key.startsWith("http://")) { // remove https condition when deploying on heroku
-        return "http://localhost/" + value;
+        return "https://url-chopper.onrender.com/" + value;
     } else if(key.startsWith("https://")) { // uncomment out these statements as well
-        return "https://slicedurl.herokuapp.com/" + value;
+        return "https://url-chopper.onrender.com/" + value;
     } else if(key.startsWith("ftp://")){
-        return "ftp://slicedurl.herokuapp.com/" + value;
+        return "https://url-chopper.onrender.com/" + value;
     } else {
         console.log("Oops ! Some error occured.");
     }
